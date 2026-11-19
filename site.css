@@ -62,7 +62,7 @@ nav.top .links a.on::after{content:"";position:absolute;left:0;right:0;bottom:-3
 .piece img{display:block;width:100%;transition:transform .6s}
 .piece:hover img{transform:scale(1.03)}
 .piece .n{position:absolute;top:-32px;left:-6px;font-family:Unbounded;font-weight:900;font-size:110px;letter-spacing:-.07em;line-height:1;z-index:2}
-.tags{position:absolute;right:14px;top:14px;display:flex;flex-direction:column;gap:6px;align-items:flex-end;z-index:2}
+.tags{position:absolute;right:14px;bottom:14px;top:auto;display:flex;flex-direction:column;gap:6px;align-items:flex-end;z-index:2}
 .tag{font-family:Mono;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:7px 11px;border-radius:30px;background:var(--papel);color:var(--preto)}
 .tag.go{background:var(--preto);color:var(--papel)}
 .cap{margin-top:16px;padding-top:14px;border-top:1.5px solid var(--preto)}
