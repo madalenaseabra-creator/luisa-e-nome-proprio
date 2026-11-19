@@ -1,7 +1,7 @@
 /* Configurador · Luísa é nome próprio (protótipo) */
 // ⚠️ PLACEHOLDER: preços por definir com a Pim. Enquanto PRICES for null, mostra "preço em breve".
 // Exemplo do formato esperado (NÃO são preços reais):
-// const PRICES = { base:{A6:0,A5:0,A4:0}, premium:{A6:0,A5:0,A4:0}, personalizada:0 };
+// const PRICES = { base:{A5:0,A4:0,A3:0}, premium:{A5:0,A4:0,A3:0}, personalizada:0 };
 const PRICES = null; // TODO: preços da Pim
 
 const LEAD = { normal: 'até 1 mês', premium: '3 a 4 meses' };
@@ -51,18 +51,17 @@ function render(){
     const sm=document.createElement('small'); sm.textContent='pré-visualização tipográfica · a Luísa escreve-a à mão'; typed.appendChild(sm);
     ppr.style.backgroundImage = 'url(assets/tex-branco.jpg)';
   }
-  $('#pv-sz').textContent = 'Pré-visualização · '+sz.id+' · papel '+sizePaperLabel(sz);
+  $('#pv-sz').textContent = 'Pré-visualização · '+sz.id+' · moldura '+sizePaperLabel(sz);
   $('#pv-pm').textContent = S.mold==='premium' ? 'Premium · papel feito à mão' : 'Normal · metal';
   // summary
   $('#s-size').textContent = sz.id + ' · ' + sizePaperLabel(sz);
-  const so=$('#s-outer'); if(so) so.textContent = sizeOuterLabel(sz);
   $('#s-col').innerHTML = `<span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:${c.h};vertical-align:-2px;margin-right:8px;border:1px solid rgba(0,0,0,.2)"></span>${c.n}`;
   $('#s-mold').textContent = S.mold==='premium' ? 'Premium · moldura em papel, feita à mão' : 'Normal · metal';
   $('#s-fr').textContent = S.ftype==='cat' ? `Catálogo · “${PIECES[S.f].t}”` : `Personalizada · “${S.txt || '…'}”`;
   $('#s-lead').textContent = LEAD[S.mold];
   $('#s-price').textContent = price();
   const mini=$('#mini'); if(mini){mini.style.setProperty('--fc',c.h);mini.classList.toggle('premium',S.mold==='premium');
-  $('#mb-lead').textContent='Prazo: '+LEAD[S.mold];$('#mb-txt').textContent=sz.id+' · papel '+sizePaperLabel(sz)+' · exterior '+sizeOuterLabel(sz)+' · '+c.n+' · '+(S.mold==='premium'?'Premium':'Normal')+' · '+price();}
+  $('#mb-lead').textContent='Prazo: '+LEAD[S.mold];$('#mb-txt').textContent=sz.id+' · moldura '+sizePaperLabel(sz)+' · '+c.n+' · '+(S.mold==='premium'?'Premium':'Normal')+' · '+price();}
 }
 document.querySelectorAll('#o-size .opt').forEach(o=>o.onclick=e=>{e.preventDefault();S.size=o.dataset.v;render()});
 document.querySelectorAll('#o-col .sw').forEach(o=>o.onclick=e=>{e.preventDefault();S.col=+o.dataset.c;render()});
