@@ -38,7 +38,7 @@ function render(){
   fr.classList.toggle('premium', S.mold==='premium');
   const real=$('#real'); if(real) real.hidden = S.mold!=='premium';
   ppr.style.setProperty('--pw', (z.w*k)+'px'); ppr.style.setProperty('--ph', (z.h*k)+'px');
-  $('#pv').style.setProperty('--wall', c.h==='#FE8CB0'||c.h==='#FE8D8F' ? '#F2E6D4' : '#EAD7CE');
+  $('#pv').style.setProperty('--wall', c.n==='Branco' ? '#D8C9B6' : '#EAD7CE');
   const ink = $('#ink'), typed = $('#typed');
   if(S.ftype==='cat'){
     const p = PIECES[S.f];
