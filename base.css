@@ -14,11 +14,6 @@ body{font-family:Grotesk,sans-serif;color:var(--preto);-webkit-font-smoothing:an
 .hw.np{-webkit-mask-image:url(assets/nome-proprio.png);aspect-ratio:1354/408}
 .hw.nome{-webkit-mask-image:url(assets/nome.png);aspect-ratio:474/248}
 .hw.proprio{-webkit-mask-image:url(assets/proprio.png);aspect-ratio:657/333}
-.hw.frase{-webkit-mask-image:url(assets/frase.png);aspect-ratio:1702/2030}
-.hw.i{-webkit-mask-image:url(assets/i-preto.png);aspect-ratio:256/382}
-.hw.i-acc{-webkit-mask-image:url(assets/i-preto-acc.png);aspect-ratio:256/382}
-.hw.i-stem{-webkit-mask-image:url(assets/i-preto-stem.png);aspect-ratio:256/382}
-.hw.il{-webkit-mask-image:url(assets/i-laranja.png);aspect-ratio:209/540}
 .stack{position:relative}.stack>.hw+.hw{position:absolute;inset:0}
 .mono{font-family:Mono;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
 .serif{font-family:Fraunces;font-style:italic;font-variation-settings:"SOFT" 100,"WONK" 1}
@@ -36,3 +31,5 @@ body{font-family:Grotesk,sans-serif;color:var(--preto);-webkit-font-smoothing:an
 .hw.f-letting{-webkit-mask-image:url(assets/frase-letting-go.png);aspect-ratio:790/618}
 .hw.f-listen{-webkit-mask-image:url(assets/frase-listen.png);aspect-ratio:443/532}
 .grain::after{background-image:url(assets/grain.png)}
+
+.hw.frase-nome{-webkit-mask-image:url(assets/frase-nome.png);mask-image:url(assets/frase-nome.png);aspect-ratio:1272/1098}
