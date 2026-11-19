@@ -32,4 +32,6 @@ body{font-family:Grotesk,sans-serif;color:var(--preto);-webkit-font-smoothing:an
 .hw.f-listen{-webkit-mask-image:url(assets/frase-listen.png);aspect-ratio:443/532}
 .grain::after{background-image:url(assets/grain.png)}
 
+.hw.i-marca{-webkit-mask-image:url(assets/i-marca.png);mask-image:url(assets/i-marca.png);aspect-ratio:700/1168}
+.hw.frase{-webkit-mask-image:url(assets/frase-v2.png);mask-image:url(assets/frase-v2.png);aspect-ratio:1702/2030}
 .hw.frase-nome{-webkit-mask-image:url(assets/frase-nome.png);mask-image:url(assets/frase-nome.png);aspect-ratio:1272/1098}
