@@ -1,0 +1,38 @@
+@font-face{font-family:Fraunces;src:url(fonts/FrauncesItalic.ttf);font-style:italic;font-weight:100 900}
+@font-face{font-family:Fraunces;src:url(fonts/Fraunces.ttf);font-style:normal;font-weight:100 900}
+@font-face{font-family:Unbounded;src:url(fonts/Unbounded.ttf);font-weight:200 900}
+@font-face{font-family:Grotesk;src:url(fonts/SpaceGrotesk.ttf);font-weight:300 700}
+@font-face{font-family:Mono;src:url(fonts/JetBrainsMono.ttf);font-weight:100 800}
+:root{--terra:#C24A2A;--mostarda:#E2B15A;--papel:#F2E6D4;--areia:#E4D5C2;--rosa:#EAD7CE;--azul:#6D8490;--preto:#161210;--pink:#FE8CB0;--salmao:#FE8D8F}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Grotesk,sans-serif;color:var(--preto);-webkit-font-smoothing:antialiased}
+.hw{display:block;background:currentColor;-webkit-mask-repeat:no-repeat;-webkit-mask-size:contain;-webkit-mask-position:center}
+.hw.luisa{-webkit-mask-image:url(assets/luisa-laranja.png);aspect-ratio:1238/548}
+.hw.luisa-body{-webkit-mask-image:url(assets/luisa-laranja-body.png);aspect-ratio:1238/548}
+.hw.luisa-acc{-webkit-mask-image:url(assets/luisa-laranja-acc.png);aspect-ratio:1238/548}
+.hw.castanho{-webkit-mask-image:url(assets/luisa-castanho.png);aspect-ratio:596/420}
+.hw.np{-webkit-mask-image:url(assets/nome-proprio.png);aspect-ratio:1354/408}
+.hw.nome{-webkit-mask-image:url(assets/nome.png);aspect-ratio:474/248}
+.hw.proprio{-webkit-mask-image:url(assets/proprio.png);aspect-ratio:657/333}
+.hw.frase{-webkit-mask-image:url(assets/frase.png);aspect-ratio:1702/2030}
+.hw.i{-webkit-mask-image:url(assets/i-preto.png);aspect-ratio:256/382}
+.hw.i-acc{-webkit-mask-image:url(assets/i-preto-acc.png);aspect-ratio:256/382}
+.hw.i-stem{-webkit-mask-image:url(assets/i-preto-stem.png);aspect-ratio:256/382}
+.hw.il{-webkit-mask-image:url(assets/i-laranja.png);aspect-ratio:209/540}
+.stack{position:relative}.stack>.hw+.hw{position:absolute;inset:0}
+.mono{font-family:Mono;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.serif{font-family:Fraunces;font-style:italic;font-variation-settings:"SOFT" 100,"WONK" 1}
+.grain::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.13;mix-blend-mode:multiply;background-image:url(assets/grain.png)}
+.hw.cast-body{-webkit-mask-image:url(assets/luisa-castanho-body.png);aspect-ratio:1192/840}
+.hw.cast-acc{-webkit-mask-image:url(assets/luisa-castanho-acc.png);aspect-ratio:1192/840}
+.hw.traco{-webkit-mask-image:url(assets/acento-traco.png);aspect-ratio:912/708}
+.hw.duplo{-webkit-mask-image:url(assets/acento-duplo.png);aspect-ratio:520/394}
+.hw.cast-body{-webkit-mask-image:url(assets/luisa-castanho-body.png);mask-image:url(assets/luisa-castanho-body.png);aspect-ratio:1192/840}
+.hw.cast-acc{-webkit-mask-image:url(assets/luisa-castanho-acc.png);mask-image:url(assets/luisa-castanho-acc.png);aspect-ratio:1192/840}
+.hw.duplo{-webkit-mask-image:url(assets/acento-duplo.png);mask-image:url(assets/acento-duplo.png);aspect-ratio:520/394}
+.hw.f-come{-webkit-mask-image:url(assets/frase-come-away.png);aspect-ratio:747/1296}
+.hw.f-fant{-webkit-mask-image:url(assets/frase-fantastique.png);aspect-ratio:1332/1613}
+.hw.f-sonhos{-webkit-mask-image:url(assets/frase-sonhos.png);aspect-ratio:1160/738}
+.hw.f-letting{-webkit-mask-image:url(assets/frase-letting-go.png);aspect-ratio:790/618}
+.hw.f-listen{-webkit-mask-image:url(assets/frase-listen.png);aspect-ratio:443/532}
+.grain::after{background-image:url(assets/grain.png)}
