@@ -43,11 +43,23 @@ function render(){
   const ink = $('#ink'), typed = $('#typed');
   if(S.ftype==='cat'){
     const p = PIECES[S.f];
-    ink.className = 'hw '+p.m; ink.hidden = false; typed.hidden = true;
+    ink.className = 'hw '+p.m; ink.hidden = false; typed.hidden = true; typed.classList.remove('multi');
     ppr.style.backgroundImage = `url(assets/${PAPER[p.paper]})`;
   } else {
     ink.hidden = true; typed.hidden = false;
-    typed.textContent = '“'+(S.txt || 'a tua frase')+'”';
+    typed.textContent = '';
+    typed.style.fontSize = '';
+    typed.classList.toggle('multi', !!(S.txt && S.txt.includes('\n')));
+    if(S.txt && S.txt.includes('\n')){
+      S.txt.split('\n').forEach(ln=>{
+        const span=document.createElement('span');
+        span.className='ln';
+        span.textContent=ln;
+        typed.appendChild(span);
+      });
+    } else {
+      typed.textContent = '“'+(S.txt || 'a tua frase')+'”';
+    }
     const sm=document.createElement('small'); sm.textContent='pré-visualização tipográfica · a Luísa escreve-a à mão'; typed.appendChild(sm);
     ppr.style.backgroundImage = 'url(assets/tex-branco.jpg)';
   }
