@@ -70,7 +70,7 @@ document.querySelectorAll('#o-ftype .opt').forEach(o=>o.onclick=e=>{e.preventDef
 document.querySelectorAll('#o-phr .opt').forEach(o=>o.onclick=e=>{e.preventDefault();S.f=+o.dataset.i;render()});
 $('#txt').value = S.txt;
 $('#txt').oninput = e=>{S.txt=e.target.value;render()};
-document.querySelectorAll('.ideas button').forEach(b=>b.onclick=()=>{S.txt=b.textContent;$('#txt').value=S.txt;render()});
+document.querySelectorAll('.ideas button').forEach(b=>b.onclick=()=>{S.txt=b.dataset.fill||b.textContent;$('#txt').value=S.txt;render()});
 $('#go').onclick=()=>{const t=$('#toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3500)};
 addEventListener('resize',render);
 render();
