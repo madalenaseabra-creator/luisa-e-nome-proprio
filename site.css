@@ -314,6 +314,9 @@ nav.top .links{gap:24px}
 .msw{display:flex;flex-direction:column;align-items:center;gap:6px;border:0;background:transparent;cursor:pointer;font-family:Mono;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--preto)}
 .msw i{display:block;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(22,18,16,.3)}
 .msw.on i{box-shadow:0 0 0 3px var(--papel),0 0 0 5px var(--preto)}
+.msz{border:0;background:transparent;cursor:pointer;padding:0;color:var(--preto)}
+.msz i{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(22,18,16,.3);font-style:normal;font-family:Mono;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
+.msz.on i{background:var(--preto);color:var(--papel);border-color:var(--preto);box-shadow:0 0 0 3px var(--papel),0 0 0 5px var(--preto)}
 @media (max-width:1100px){nav.top .links{gap:16px;font-size:11px}nav.top .cta{display:none}}
 @media (max-width:700px){
  .menu-btn{display:inline-block}nav.top .cta{display:none}
