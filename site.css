@@ -391,3 +391,19 @@ nav.top .links{gap:24px}
   .pcard .fr .ppr .typed{font-size:20px}
   .pcard .fr .ppr .typed.multi{font-size:18px}
 }
+
+/* galeria de peças logo abaixo do banner */
+.topgal{position:relative;z-index:3;background:var(--papel);border-top:1.5px solid var(--preto)}
+.tg-track{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:22px 48px 36px}
+.tg{display:block;background:var(--areia);overflow:hidden;min-width:0}
+.tg img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.tg:hover img{transform:scale(1.06)}
+@media (max-width:700px){
+  .tg-track{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:18px;padding:16px 18px 22px;-webkit-overflow-scrolling:touch;scrollbar-width:none;overscroll-behavior-x:contain}
+  .tg-track::-webkit-scrollbar{display:none}
+  .tg{flex:none;width:68vw;max-width:280px;scroll-snap-align:start}
+}
+@media (prefers-reduced-motion:reduce){
+  .tg img{transition:none}
+  .tg:hover img{transform:none}
+}
