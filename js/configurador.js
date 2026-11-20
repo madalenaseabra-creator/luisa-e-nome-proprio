@@ -94,6 +94,26 @@ function setTyped(el, lines, quoted){
   sm.textContent = 'pré-visualização tipográfica · a Luísa escreve-a à mão';
   el.appendChild(sm);
 }
+function previewScale(z, boxH, mobile){
+  const bw = S.mold === 'premium' ? 24 : 9;
+  const natural = z.h + z.mat * 2 + bw * 2;
+  const pad = mobile ? 24 : 56; /* espaço para as etiquetas no fundo */
+  const maxW = mobile ? innerWidth - 48 : 488; /* painel 560px menos padding */
+  const naturalW = z.w + z.mat * 2 + bw * 2;
+  const cap = mobile ? 0.7 : 1;
+  return Math.min(cap, Math.max(0.3, (boxH - pad) / natural), maxW / naturalW);
+}
+function applyFrameSize(root, k){
+  const z = SIZES[S.size].preview, c = COLS[S.col];
+  const fr = root.matches && root.matches('.fr') ? root : root.querySelector('.fr');
+  const ppr = fr.querySelector('.ppr');
+  fr.style.setProperty('--fc', c.h);
+  fr.querySelector('.mat').style.setProperty('--mat', (z.mat * k) + 'px');
+  fr.classList.toggle('premium', S.mold === 'premium');
+  ppr.style.setProperty('--pw', (z.w * k) + 'px');
+  ppr.style.setProperty('--ph', (z.h * k) + 'px');
+}
+
 function render(){
   document.querySelectorAll('#o-size .opt').forEach(o => o.classList.toggle('on', o.dataset.v === S.size));
   document.querySelectorAll('.size-diag .sd').forEach(el => el.classList.toggle('on', el.dataset.s === S.size));
@@ -113,7 +133,7 @@ function render(){
   if(nasc) nasc.classList.toggle('show', isNasc);
 
   const sz = SIZES[S.size], z = sz.preview, c = COLS[S.col], fr = $('#fr'), ppr = $('#ppr');
-  const k = innerWidth < 700 ? .7 : 1;
+  const k = previewScale(z, innerWidth < 700 ? 380 : innerHeight * 0.4, innerWidth < 700);
   fr.style.setProperty('--fc', c.h);
   fr.querySelector('.mat').style.setProperty('--mat', (z.mat * k) + 'px');
   fr.classList.toggle('premium', S.mold === 'premium');
@@ -213,6 +233,51 @@ document.querySelectorAll('#ideas button').forEach(b => b.onclick = () => {
 });
 const go = $('#go');
 if(go) go.onclick = () => { const t = $('#toast'); t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3500); };
+
+function closePvLb(){
+  const lb = $('#pv-lb');
+  if(!lb || lb.hidden) return;
+  lb.hidden = true;
+  const card = $('#pv-lb-card');
+  if(card) card.innerHTML = '';
+  document.body.style.overflow = '';
+}
+function openPvLb(){
+  if(innerWidth < 700) return;
+  const lb = $('#pv-lb'), card = $('#pv-lb-card'), src = $('#fr');
+  if(!lb || !card || !src) return;
+  card.innerHTML = '';
+  const clone = src.cloneNode(true);
+  clone.id = 'fr-lb';
+  card.appendChild(clone);
+  const z = SIZES[S.size].preview;
+  const bw = S.mold === 'premium' ? 24 : 9;
+  const natural = z.h + z.mat * 2 + bw * 2;
+  const naturalW = z.w + z.mat * 2 + bw * 2;
+  const k = Math.min((innerHeight * 0.8) / natural, (innerWidth * 0.8) / naturalW);
+  applyFrameSize(clone, k);
+  lb.hidden = false;
+  document.body.style.overflow = 'hidden';
+  const x = $('#pv-lb-x');
+  if(x) x.focus();
+}
+const pv = $('#pv');
+if(pv){
+  pv.addEventListener('click', () => openPvLb());
+  pv.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openPvLb(); }
+  });
+}
+const pvlb = $('#pv-lb');
+if(pvlb){
+  pvlb.addEventListener('click', e => { if(e.target === pvlb) closePvLb(); });
+  const x = $('#pv-lb-x');
+  if(x) x.addEventListener('click', e => { e.stopPropagation(); closePvLb(); });
+  const card = $('#pv-lb-card');
+  if(card) card.addEventListener('click', e => e.stopPropagation());
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closePvLb(); });
+
 function syncNavOffset(){
   const nav = document.querySelector('nav.top');
   const inner = document.querySelector('.side .inner');
@@ -220,7 +285,11 @@ function syncNavOffset(){
   const h = Math.round(nav.getBoundingClientRect().height);
   if(h > 0) inner.style.setProperty('--nav-offset', h + 'px');
 }
-addEventListener('resize', () => { syncNavOffset(); render(); });
+addEventListener('resize', () => {
+  syncNavOffset();
+  render();
+  if(innerWidth < 700) closePvLb();
+});
 syncNavOffset();
 render();
 
