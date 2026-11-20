@@ -144,7 +144,15 @@ function render(){
   const ink = $('#ink'), typed = $('#typed');
   ppr.style.backgroundImage = `url(${paperTex(S.paper)})`;
 
-  if(S.ftype === 'cat' && item.kind === 'hw'){
+  const inkimg = $('#inkimg');
+  const nascTyped = isNasc && (S.nasc.nome || S.nasc.peso || S.nasc.data || S.nasc.hora);
+  const useImg = S.ftype === 'cat' && item.img && !nascTyped;
+  if(inkimg){ inkimg.hidden = !useImg; if(useImg && inkimg.getAttribute('src') !== item.img) inkimg.src = item.img; }
+  if(useImg){
+    ink.hidden = true;
+    typed.hidden = true;
+    typed.classList.remove('multi');
+  } else if(S.ftype === 'cat' && item.kind === 'hw'){
     ink.className = 'hw ' + item.m;
     ink.hidden = false;
     typed.hidden = true;

@@ -441,6 +441,10 @@ nav.top .links{gap:24px}
 .opt.cat .cat-txt{font-family:Fraunces;font-style:italic;font-size:16px;line-height:1.25;text-align:center;font-variation-settings:"SOFT" 100,"WONK" 1}
 .opt.cat .cat-txt.multi{display:flex;flex-direction:column;gap:0;font-size:13px;line-height:1.25}
 .opt.cat .cat-txt.multi .ln{display:block}
+.opt.cat .cat-img{display:block;height:60px;width:100%;object-fit:contain}
+.opt.cat.on .cat-img{filter:brightness(0) invert(1)}
+.fr .ppr .ink-img{display:block;max-width:72%;max-height:72%;object-fit:contain;mix-blend-mode:multiply}
+.fr .ppr .ink-img[hidden]{display:none}
 
 /* nascimento */
 .nasc{display:none;margin-top:16px;grid-template-columns:1fr 1fr;gap:10px}
