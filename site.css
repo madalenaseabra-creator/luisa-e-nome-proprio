@@ -470,7 +470,7 @@ section.mini .pitch span.hl{background:var(--preto);color:var(--salmao);padding:
 section.mini .timer{display:flex;gap:10px;margin-top:40px;align-items:center}
 section.mini .timer i{display:block;height:10px;flex:1;background:var(--preto);border-radius:10px}
 section.mini .timer i.off{background:rgba(22,18,16,.2)}
-.nums{display:grid;grid-template-columns:repeat(4,1fr);border-top:1.5px solid var(--preto);border-bottom:1.5px solid var(--preto);background:var(--salmao)}
+.nums{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1.5px solid var(--preto)}
 .nums div{padding:40px 30px 34px;border-right:1.5px solid var(--preto)}
 .nums div:last-child{border-right:0}
 .nums b{display:block;font-family:Unbounded;font-weight:900;font-size:88px;line-height:.9;letter-spacing:-.06em}
