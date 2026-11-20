@@ -415,3 +415,6 @@ nav.top .links{gap:24px}
   .tg img{transition:none}
   .tg:hover img{transform:none}
 }
+.manif .end sup,.manif .fn sup{font-size:.6em;vertical-align:super;line-height:0;color:var(--mostarda)}
+.manif .fn{margin-top:72px;max-width:640px;font-size:14px;line-height:1.55;color:#a89d8b;border-top:1px solid rgba(242,230,212,.18);padding-top:16px}
+@media (max-width:700px){.manif .fn{margin-top:44px;font-size:13px}}
