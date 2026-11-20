@@ -113,14 +113,7 @@ function render(){
   if(nasc) nasc.classList.toggle('show', isNasc);
 
   const sz = SIZES[S.size], z = sz.preview, c = COLS[S.col], fr = $('#fr'), ppr = $('#ppr');
-  const pv = $('#pv');
-  const bw = S.mold === 'premium' ? 24 : 9;
-  let k = innerWidth < 700 ? .7 : 1;
-  if(pv){
-    const avail = pv.clientHeight - 24;
-    const natural = (z.h + z.mat * 2 + bw * 2) * k;
-    if(avail > 80 && natural > avail) k = k * (avail / natural);
-  }
+  const k = innerWidth < 700 ? .7 : 1;
   fr.style.setProperty('--fc', c.h);
   fr.querySelector('.mat').style.setProperty('--mat', (z.mat * k) + 'px');
   fr.classList.toggle('premium', S.mold === 'premium');
@@ -154,7 +147,7 @@ function render(){
   const surprise = S.paper === 'luisa';
   const pvpp = $('#pv-pp');
   if(pvpp) pvpp.hidden = !surprise;
-  $('#pv-sz').textContent = sz.id + ' · ' + sizePaperLabel(sz);
+  $('#pv-sz').textContent = 'Pré-visualização · ' + sz.id + ' · moldura ' + sizePaperLabel(sz);
   $('#pv-pm').textContent = S.mold === 'premium' ? 'Premium · papel feito à mão' : 'Normal · metal';
 
   $('#s-size').textContent = sz.id + ' · ' + sizePaperLabel(sz);
@@ -220,5 +213,14 @@ document.querySelectorAll('#ideas button').forEach(b => b.onclick = () => {
 });
 const go = $('#go');
 if(go) go.onclick = () => { const t = $('#toast'); t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 3500); };
-addEventListener('resize', render);
+function syncNavOffset(){
+  const nav = document.querySelector('nav.top');
+  const inner = document.querySelector('.side .inner');
+  if(!nav || !inner || innerWidth < 700) return;
+  const h = Math.round(nav.getBoundingClientRect().height);
+  if(h > 0) inner.style.setProperty('--nav-offset', h + 'px');
+}
+addEventListener('resize', () => { syncNavOffset(); render(); });
+syncNavOffset();
 render();
+
