@@ -37,6 +37,7 @@ nav.top .links a.on::after{content:"";position:absolute;left:0;right:0;bottom:-3
 .hero .bottom p.s{font-size:17px;line-height:1.5;max-width:430px}
 /* manifesto */
 .manif{background:var(--preto);color:var(--papel);padding:140px 48px 130px;position:relative;margin-top:-16px;overflow:hidden}
+.historia+.manif{margin-top:0}
 .manif .head{display:flex;justify-content:space-between;margin-bottom:56px}.manif .head .lbl{color:var(--mostarda)}
 .manif h2{font-family:Unbounded;font-weight:900;font-size:112px;line-height:.9;letter-spacing:-.06em;max-width:1250px}
 .manif h2 em{font-family:Fraunces;font-weight:300;font-style:italic;letter-spacing:-.03em;color:var(--pink)}
