@@ -461,6 +461,7 @@ nav.top .links{gap:24px}
 
 /* minifesto + faixa de números */
 section.mini{background:var(--salmao);padding:120px 48px 110px;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;gap:50px}
+section.mini > *{min-width:0}
 section.mini h2{font-family:Unbounded;font-weight:900;font-size:176px;line-height:.82;letter-spacing:-.075em}
 section.mini h2 small{display:block;font-family:Fraunces;font-weight:300;font-style:italic;font-size:44px;letter-spacing:-.01em;margin-top:22px;font-variation-settings:"SOFT" 100,"WONK" 1}
 section.mini .big30{position:absolute;right:40px;top:40px;font-family:Unbounded;font-weight:900;font-size:300px;line-height:.8;letter-spacing:-.08em;color:rgba(22,18,16,.09)}
