@@ -89,7 +89,7 @@ function setTyped(el, lines, quoted){
     });
   } else {
     const t = lines[0] || 'a tua frase';
-    el.textContent = quoted ? '“' + t + '”' : t;
+    el.textContent = t; // sem aspas (pedido da Madalena)
   }
   const sm = document.createElement('small');
   sm.textContent = 'pré-visualização tipográfica · a Luísa escreve-a à mão';
@@ -188,11 +188,11 @@ function render(){
       const nome = S.nasc.nome;
       $('#s-fr').textContent = 'Catálogo · nascimento' + (nome ? ' · ' + nome : '');
     } else {
-      $('#s-fr').textContent = 'Catálogo · “' + item.title + '”';
+      $('#s-fr').textContent = 'Catálogo · ' + item.title;
     }
   } else {
     const short = (S.txt || '…').split('\n')[0];
-    $('#s-fr').textContent = 'Personalizada · “' + short + '”';
+    $('#s-fr').textContent = 'Personalizada · ' + short;
   }
   $('#s-lead').textContent = LEAD[S.mold];
   $('#s-price').textContent = price();
