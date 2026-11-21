@@ -171,7 +171,7 @@ footer .legal a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(
 .fr.premium .mat{box-shadow:inset 0 3px 6px rgba(0,0,0,.3)}
 .fr .ppr{position:relative;width:var(--pw,180px);height:var(--ph,240px);background:url(assets/tex-branco.jpg) center/700px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 2px #fff,0 0 0 3px rgba(0,0,0,.15);transition:all .4s;overflow:hidden;container-type:size}
 .fr .ppr .hw{width:72%;height:72%;color:#1a1614;-webkit-mask-size:contain;mix-blend-mode:multiply}
-.fr .ppr .typed{font-family:Fraunces;font-style:italic;font-size:15px;line-height:1.25;text-align:center;color:rgba(22,18,16,.55);padding:14px;box-sizing:border-box;max-width:100%}
+.fr .ppr .typed{font-family:Mao,Fraunces;font-style:normal;font-size:15px;line-height:1.3;text-align:center;color:rgba(22,18,16,.55);padding:14px;box-sizing:border-box;max-width:100%}
 .fr .ppr .typed.multi{font-size:clamp(6.5px,9.4cqw,13px);line-height:1.25;padding:8px 6px}
 .fr .ppr .typed.multi small{font-size:.62em;margin-top:.45em}
 .fr .ppr .typed .ln{display:block;white-space:nowrap}
@@ -442,7 +442,7 @@ nav.top .links{gap:24px}
 .cat-g{margin-top:22px}
 .cat-g>.lbl{display:block;margin-bottom:8px;color:var(--terra)}
 .cat-g .phr{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:8px}
-.opt.cat .cat-txt{font-family:Fraunces;font-style:italic;font-size:16px;line-height:1.25;text-align:center;font-variation-settings:"SOFT" 100,"WONK" 1}
+.opt.cat .cat-txt{font-family:Mao,Fraunces;font-style:normal;font-size:16px;line-height:1.3;text-align:center}
 .opt.cat .cat-txt.multi{display:flex;flex-direction:column;gap:0;font-size:13px;line-height:1.25}
 .opt.cat .cat-txt.multi .ln{display:block}
 .opt.cat .cat-img{display:block;height:60px;width:100%;object-fit:contain}

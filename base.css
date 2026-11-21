@@ -2,6 +2,7 @@
 @font-face{font-family:Fraunces;src:url(fonts/Fraunces.ttf);font-style:normal;font-weight:100 900}
 @font-face{font-family:Unbounded;src:url(fonts/Unbounded.ttf);font-weight:200 900}
 @font-face{font-family:Grotesk;src:url(fonts/SpaceGrotesk.ttf);font-weight:300 700}
+@font-face{font-family:Mao;src:url(fonts/GloriaHallelujah.ttf);font-display:swap}
 @font-face{font-family:Mono;src:url(fonts/JetBrainsMono.ttf);font-weight:100 800}
 :root{--terra:#C24A2A;--mostarda:#E2B15A;--papel:#F2E6D4;--areia:#E4D5C2;--rosa:#EAD7CE;--azul:#6D8490;--preto:#161210;--pink:#FE8CB0;--salmao:#FE8D8F}
 *{box-sizing:border-box;margin:0;padding:0}

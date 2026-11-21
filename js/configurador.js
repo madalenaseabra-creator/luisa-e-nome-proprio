@@ -32,7 +32,8 @@ function pickPaper(){
 function pickCat(){
   const raw = q.get('cid') || q.get('f');
   const list = typeof CATALOG !== 'undefined' ? CATALOG : [];
-  if(raw == null || raw === '') return list.length > 1 ? 1 : 0;
+  const dflt = list.findIndex(c => c.id === 'come'); // por omissão: come away (como antes)
+  if(raw == null || raw === '') return dflt >= 0 ? dflt : (list.length > 1 ? 1 : 0);
   const byId = list.findIndex(c => c.id === raw);
   if(byId >= 0) return byId;
   const n = +raw;
