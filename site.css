@@ -103,7 +103,7 @@ nav.top .links a.on::after{content:"";position:absolute;left:0;right:0;bottom:-3
 .historia .quote .stack{width:180px;flex:none}
 /* footer */
 footer{background:var(--terra);color:var(--papel);padding:80px 48px 34px;overflow:hidden}
-footer .top{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}
+footer .top{display:grid;grid-template-columns:minmax(0,36%) auto auto;justify-content:space-between;gap:40px}
 footer h3{font-family:Fraunces;font-style:italic;font-weight:300;font-size:42px;line-height:1.05}
 footer .in{display:flex;margin-top:24px;border-bottom:1.5px solid var(--papel);padding-bottom:12px;justify-content:space-between;font-size:18px}
 footer .col .lbl{opacity:.7;margin-bottom:16px}footer .col a{display:block;font-size:20px;margin-bottom:8px}
@@ -528,6 +528,7 @@ footer .legal-links a{border-bottom:1px solid rgba(242,230,212,.45)}
 .nl-ok{font-size:15px;line-height:1.4}
 .nl-ok a{border-bottom:1px solid currentColor}
 .nl-end{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.nl button{border:0;cursor:pointer}
 .nl button[disabled]{opacity:.55;cursor:not-allowed;border:0}
 .doc .nl{margin-top:8px}.doc .nl-int,.doc .nl-row{padding-left:0}
 @media (max-width:700px){.nl-row{grid-template-columns:1fr;gap:16px}}
