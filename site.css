@@ -505,3 +505,32 @@ section.mini .timer i.off{background:rgba(22,18,16,.2)}
 @media (max-width:700px){
   .pv-lb{display:none!important}
 }
+/* páginas legais: texto corrido */
+.doc{max-width:760px;padding:0 48px 110px;font-size:17px;line-height:1.6}
+.doc h3{font-family:Unbounded;font-weight:700;font-size:22px;letter-spacing:-.02em;margin:44px 0 12px}
+.doc p,.doc ul,.doc ol{margin-bottom:14px}
+.doc ul,.doc ol{padding-left:22px}
+.doc li{margin-bottom:6px}
+.doc a{border-bottom:1px solid currentColor}
+.doc mark.fill{background:#FFE15A;color:var(--preto);padding:1px 4px;font-weight:600}
+footer .legal-links{display:flex;flex-wrap:wrap;gap:6px 10px;margin-bottom:16px;opacity:.85}
+footer .legal-links a{border-bottom:1px solid rgba(242,230,212,.45)}
+@media (max-width:700px){.doc{padding:0 18px 80px;font-size:16px}.doc h3{font-size:19px;margin-top:34px}}
+/* newsletter (Contactos) */
+.nl{display:flex;flex-direction:column;gap:18px;max-width:720px}
+.nl-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.nl-f{display:flex;flex-direction:column;gap:6px}
+.nl input[type=text],.nl input[type=email]{font:inherit;font-size:18px;color:inherit;background:transparent;border:0;border-bottom:1.5px solid currentColor;padding:6px 0 10px;border-radius:0;outline:none}
+.nl-int{border:0;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center}
+.nl-int legend{margin-bottom:8px;width:100%}
+.nl label{cursor:pointer}
+.nl input[type=checkbox]{accent-color:currentColor;width:16px;height:16px;vertical-align:-2px;margin-right:6px}
+.nl-ok{font-size:15px;line-height:1.4}
+.nl-ok a{border-bottom:1px solid currentColor}
+.nl-end{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.nl button[disabled]{opacity:.55;cursor:not-allowed;border:0}
+.doc .nl{margin-top:8px}.doc .nl-int,.doc .nl-row{padding-left:0}
+@media (max-width:700px){.nl-row{grid-template-columns:1fr;gap:16px}}
+/* Colecção: botão Adicionar ao carrinho (desactivado até haver loja) */
+.cap > .cta{margin-top:14px}
+.cap > .cta[disabled]{opacity:.55;cursor:not-allowed;border:0}
